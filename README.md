@@ -1,1020 +1,808 @@
-# SurakshaDrishti AI
+<div align="center">
 
-## AI/ML-Based Railway Crowd and Crime Monitoring System
+# 🛡️ SURAKSHADRISHTI AI
 
-**Turning Railway CCTV into Real-Time AI Safety Intelligence**
+### AI/ML-Based Railway Crowd and Safety Monitoring System
 
----
+**Transforming Traditional Railway CCTV into Intelligent Safety Monitoring**
 
-## Project Pitch
+<br>
 
-**SurakshaDrishti AI** is an AI/ML-based railway safety monitoring system that transforms CCTV/webcam feeds into an intelligent safety command center.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge\&logo=react\&logoColor=black)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge\&logo=fastapi)
+![YOLOv8](https://img.shields.io/badge/YOLOv8-AI%20Detection-orange?style=for-the-badge)
+![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?style=for-the-badge\&logo=opencv)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge\&logo=sqlite)
 
-The system uses computer vision, object detection, tracking, crowd analysis, event detection and real-time alerts to assist railway operators in monitoring crowded and restricted areas.
+<br>
 
-It provides a centralized dashboard for:
+**🤖 Artificial Intelligence | 👥 Crowd Monitoring | 🚨 Incident Detection | 📊 Analytics**
 
-* Live camera monitoring
-* Person detection
-* Person tracking
-* Crowd density monitoring
-* Intrusion detection
-* Loitering detection
-* Fall/suspicious activity detection
-* SOS reporting
-* Real-time alerts
-* Evidence management
-* Authority response workflow
-* Safety analytics
-* Event reports and exports
+<br>
 
-The project is designed as a working software MVP aligned with the concept of **SIH1349 - Ministry of Railways**, focusing on AI-assisted railway crowd management, safety monitoring and incident response.
+[Overview](#-project-overview) •
+[Features](#-key-features) •
+[Architecture](#-system-architecture) •
+[Installation](#-installation-guide) •
+[Team](#-team-trinetra)
 
----
+<br>
 
-# Why This Project Matters
+**Repository:** [SurakshaDrishti-AI](https://github.com/aashumishra0907-beep/SurakshaDrishti-AI)
 
-Railway stations are crowded and dynamic public environments where safety incidents can occur quickly.
-
-Traditional CCTV systems primarily record video. Human operators must continuously watch multiple screens to identify unusual events.
-
-SurakshaDrishti AI adds an intelligent monitoring layer that can:
-
-```text
-CCTV / Webcam
-      ↓
-AI Detection
-      ↓
-Tracking
-      ↓
-Event Analysis
-      ↓
-Alert Generation
-      ↓
-Command Dashboard
-      ↓
-Authority Response
-      ↓
-Evidence + Reports
-```
-
-The objective is to help operators identify important events faster and organize the response workflow.
+</div>
 
 ---
 
-# Main Features
+# 📌 1. Project Overview
 
-## 1. Live Camera Monitoring
+**SurakshaDrishti AI** is an Artificial Intelligence and Machine Learning-based railway safety monitoring platform developed to improve railway crowd observation, incident awareness and emergency response coordination.
 
-The system supports live webcam/CCTV-style video feeds through the AI pipeline.
+The project integrates Computer Vision, YOLOv8-based person detection, video processing, tracking, event analysis and a centralized web dashboard.
 
-Features:
+It is designed to process camera feeds, identify relevant monitoring events and provide operators with a centralized interface for observing railway environments.
 
-* Live video display
-* Camera status
-* Camera identification
-* Location information
-* Person detection
-* Real-time event monitoring
+The platform combines AI-powered monitoring with incident management capabilities, including:
 
----
+* Live camera monitoring.
+* AI-based person detection.
+* Person tracking.
+* Crowd density monitoring.
+* Restricted-zone intrusion monitoring.
+* Loitering detection.
+* Suspicious-event awareness.
+* Fall-detection prototype.
+* Real-time alert management.
+* SOS emergency reporting.
+* Evidence and incident management.
+* Authority response workflow.
+* Safety analytics and reporting.
 
-## 2. AI Person Detection
+The project explores how existing railway CCTV infrastructure can be enhanced with an intelligent monitoring layer.
 
-The system uses **YOLOv8 and OpenCV** for computer vision-based detection.
+### 🎯 Project Mission
 
-Detected persons can be displayed with bounding boxes.
-
-Example:
-
-```text
-Camera 01
-
-Person 1
-Person 2
-Person 3
-Person 4
-
-Total Persons: 4
-```
-
-Detection results can be passed to the tracking and event-analysis modules.
+> To develop an AI-assisted railway safety platform that supports faster incident awareness, intelligent crowd monitoring and organized emergency response.
 
 ---
 
-# 3. Person Tracking
+# 🚨 2. Problem Statement
 
-The tracking module assigns temporary IDs to detected persons.
+Railway stations are highly dynamic public environments where thousands of passengers move through platforms, entrances, waiting areas and other public spaces.
 
-Example:
+Traditional CCTV surveillance primarily depends on human operators continuously observing multiple camera feeds.
 
-```text
-Person ID: 17
+This creates several challenges:
 
-10:20:01 → Zone A
-10:20:10 → Zone A
-10:20:20 → Zone A
-10:20:30 → Zone A
-```
+* Monitoring multiple cameras simultaneously is difficult.
+* Crowd congestion may not be identified immediately.
+* Unusual events can be overlooked.
+* Incident information may be scattered across different systems.
+* Emergency reporting and response coordination can be delayed.
+* Reviewing historical incidents can require significant manual effort.
 
-Tracking information can be used for:
+### 💡 Proposed Solution
 
-* Loitering detection
-* Zone monitoring
-* Movement analysis
-* Crowd analysis
+SurakshaDrishti AI introduces an AI-assisted monitoring architecture that processes camera feeds and organizes relevant monitoring information through a centralized dashboard.
 
----
+The system aims to:
 
-# 4. Crowd Monitoring
-
-The crowd monitoring module counts detected persons in each camera view.
-
-The system can compare the current number of detected persons against configurable thresholds.
-
-Example:
-
-```text
-People Count: 47
-Configured Capacity: 60
-Occupancy: 78%
-
-Status: HIGH
-```
-
-Possible crowd states:
-
-```text
-NORMAL
-MODERATE
-HIGH
-CRITICAL
-```
-
-Thresholds can be configured according to the monitored area.
+1. Detect people in supported video streams.
+2. Track detected people across frames.
+3. Analyze crowd activity.
+4. Monitor configured restricted areas.
+5. Generate alerts for configured event conditions.
+6. Store incident information.
+7. Support SOS reporting.
+8. Provide incident tracking and reporting.
 
 ---
 
-# 5. Intrusion Detection
+# ✨ 3. Key Features
 
-Administrators can configure restricted zones inside camera views.
+## 🤖 3.1 AI-Based Person Detection
 
-Example:
+The AI detection module uses YOLOv8 and OpenCV to process video frames.
 
-```text
-Camera View
+**Capabilities:**
 
-+--------------------------------+
-|                                |
-|       NORMAL AREA              |
-|                                |
-|  +----------------------+      |
-|  |   RESTRICTED ZONE    |      |
-|  |                      |      |
-|  +----------------------+      |
-|                                |
-+--------------------------------+
-```
+* Person detection.
+* Bounding-box visualization.
+* Frame processing.
+* Detection confidence information where available.
+* Integration with tracking and event-processing modules.
 
-When a tracked person enters a restricted area, the system generates an intrusion event.
+## 👥 3.2 Intelligent Crowd Monitoring
 
-Example:
+The crowd monitoring module analyzes detected persons within a camera view.
 
-```text
-INTRUSION ALERT
+**Capabilities:**
 
-Camera: C02
-Zone: Restricted Area
-Time: 21:32:10
-Severity: HIGH
-Status: PENDING
-```
+* Person-count estimation.
+* Crowd activity observation.
+* Configurable crowd thresholds.
+* Crowd-level classification.
+* Identification of potentially congested areas.
 
----
+Example crowd classifications:
 
-# 6. Loitering Detection
+| Crowd Level | Description                        |
+| ----------- | ---------------------------------- |
+| NORMAL      | Regular activity                   |
+| MODERATE    | Increasing activity                |
+| HIGH        | High crowd concentration           |
+| CRITICAL    | Requires immediate operator review |
 
-The system can monitor how long a tracked person remains inside a configured area.
+Actual thresholds depend on the configured monitoring environment.
 
-Example:
+## 🎯 3.3 Person Tracking
 
-```text
-Person ID: 17
-Zone: Restricted Area
-Duration: 45 seconds
+The tracking module supports monitoring detected persons across video frames.
 
-LOITERING ALERT
-```
+**Capabilities:**
 
-The loitering threshold can be configured according to the monitored location.
+* Temporary tracking IDs.
+* Frame-to-frame tracking.
+* Movement observation.
+* Tracking information for event analysis.
 
----
+Tracking information can support crowd analysis, zone monitoring and time-based presence rules.
 
-# 7. Suspicious Activity Detection
+## 🚧 3.4 Intrusion Detection
 
-The system provides an AI-assisted event-analysis layer for identifying potentially unusual activity.
+The intrusion monitoring module is designed to identify people entering configured restricted areas.
+
+**Capabilities:**
+
+* Restricted-zone monitoring.
+* Zone-based event generation.
+* Camera-specific monitoring conditions.
+* Incident alert integration.
+
+## ⏱️ 3.5 Loitering Detection
+
+The loitering module evaluates prolonged presence using configured time-based conditions.
+
+**Capabilities:**
+
+* Presence-duration monitoring.
+* Configurable time thresholds.
+* Event generation.
+* Alert integration.
+
+## 🚨 3.6 Suspicious-Event Monitoring
+
+The event engine organizes potentially unusual monitoring conditions into reviewable events.
 
 Possible event categories include:
 
+* Intrusion.
+* Loitering.
+* Crowd alert.
+* Suspected fall.
+* Other configured monitoring events.
+
+AI-generated events must always be reviewed by authorized personnel.
+
+## 🆘 3.7 SOS Emergency Reporting
+
+The SOS module provides an emergency reporting interface.
+
+**Capabilities:**
+
+* Emergency report submission.
+* Incident information management.
+* Location information.
+* Emergency status tracking.
+* Authority assignment workflow.
+
+## 📢 3.8 Real-Time Alert Management
+
+The alert system provides a centralized interface for monitoring generated events.
+
+**Capabilities:**
+
+* Alert visualization.
+* Event categorization.
+* Severity classification.
+* Incident status tracking.
+* Alert history.
+* Operator review.
+
+## 📁 3.9 Evidence Management
+
+The system includes an evidence-management workflow for organizing information associated with monitoring events.
+
+Possible evidence metadata includes:
+
+* Event ID.
+* Camera ID.
+* Event category.
+* Timestamp.
+* Location.
+* Severity.
+* Evidence reference.
+* Incident status.
+
+## 👮 3.10 Authority Response Workflow
+
+The application provides a structured incident-response workflow.
+
 ```text
-NORMAL
-SUSPICIOUS ACTIVITY
-FALL SUSPECTED
-FIGHT SUSPECTED
-INTRUSION
-LOITERING
-CROWD ALERT
+       EVENT DETECTED
+             |
+             v
+          PENDING
+             |
+             v
+          ASSIGNED
+             |
+             v
+        ACKNOWLEDGED
+             |
+             v
+         RESPONDING
+             |
+             v
+          RESOLVED
 ```
 
-These events are treated as alerts requiring operator verification rather than automatic confirmation of a crime.
+This workflow supports organized incident tracking and operator coordination.
+
+## 📊 3.11 Analytics Dashboard
+
+The analytics module provides access to monitoring and incident information.
+
+**Capabilities:**
+
+* Event statistics.
+* Incident summaries.
+* Historical information.
+* Monitoring activity visualization.
+* Safety analytics.
+
+## 📄 3.12 Reports and Data Export
+
+The reporting module supports exporting available event information.
+
+Supported formats:
+
+* JSON.
+* CSV.
+
+Reports can be used for reviewing historical monitoring information.
 
 ---
 
-# 8. Fall Detection Prototype
+# 🖥️ 4. Application Modules
 
-A fall-detection module can analyze a person's body position and movement to identify possible falls.
-
-Workflow:
-
-```text
-Person Detection
-       ↓
-Pose / Movement Analysis
-       ↓
-Fall Suspected
-       ↓
-Alert
-       ↓
-Operator Verification
-       ↓
-Authority Response
-```
-
-Example:
-
-```text
-FALL ALERT
-
-Camera: C03
-Location: Platform 3
-Time: 21:18:42
-Severity: HIGH
-
-[View Evidence]
-[Dispatch Authority]
-[Mark Resolved]
-```
+| Module              | Responsibility                         |
+| ------------------- | -------------------------------------- |
+| AI Engine           | Computer vision and person detection   |
+| Tracking Engine     | Tracking detected persons              |
+| Crowd Engine        | Crowd observation and density analysis |
+| Event Engine        | Event processing and rule evaluation   |
+| Alert System        | Alert generation and management        |
+| SOS System          | Emergency report handling              |
+| Backend             | API and application logic              |
+| Database            | Persistent information storage         |
+| Frontend            | Dashboard and user interaction         |
+| Analytics           | Monitoring statistics and reporting    |
+| Evidence Management | Incident-related evidence organization |
 
 ---
 
-# 9. Weapon Detection Module
+# 🏗️ 5. System Architecture
 
-The system architecture supports a separate object-detection model for detecting potentially prohibited objects.
-
-Workflow:
+SurakshaDrishti AI follows a modular architecture connecting video processing, AI inference, backend services, persistent storage and the frontend dashboard.
 
 ```text
-Camera
-   ↓
-Object Detection
-   ↓
-Potential Prohibited Object
-   ↓
-High Priority Alert
-   ↓
-Evidence Capture
-   ↓
-Operator Verification
-```
-
-Weapon detection should be treated as a prototype AI capability and must be evaluated using an appropriate trained model and dataset before real-world deployment.
-
----
-
-# 10. Real-Time Alert System
-
-The alert engine converts detected events into dashboard alerts.
-
-Example:
-
-```text
-HIGH PRIORITY
-
-INTRUSION DETECTED
-Camera: C02
-Time: 21:32:10
-Zone: Platform Restricted Area
-```
-
-Alerts can have different severity levels:
-
-```text
-LOW
-MEDIUM
-HIGH
-CRITICAL
-```
-
-Operators can:
-
-* View alert
-* Acknowledge alert
-* Assign authority
-* Update status
-* View evidence
-* Resolve incident
-
----
-
-# 11. Automatic Evidence Management
-
-When an important event occurs, the system can store event information and associated evidence.
-
-Stored information may include:
-
-```text
-Event ID
-Camera ID
-Event Type
-Severity
-Timestamp
-Location
-Confidence
-Evidence Path
-Status
-```
-
-Example:
-
-```text
-Incident #1042
-
-Type: Intrusion
-Camera: C02
-Time: 21:32:10
-Severity: HIGH
-
-Evidence:
-incident_1042.jpg
-
-Status:
-ASSIGNED
-```
-
----
-
-# 12. SOS Emergency System
-
-The SOS module allows an operator or passenger to create an emergency report.
-
-Example:
-
-```text
-SOS REPORT
-
-Location: Platform 2
-Incident Type: Medical Emergency
-Description: Passenger requires assistance
-Time: 21:35:12
-
-[Submit SOS]
-```
-
-The SOS event can be sent to the command dashboard and assigned to an authority.
-
----
-
-# 13. Authority Response Workflow
-
-The system provides a structured incident-response workflow.
-
-```text
-DETECTED
-    ↓
-PENDING
-    ↓
-ASSIGNED
-    ↓
-ACKNOWLEDGED
-    ↓
-RESPONDING
-    ↓
-RESOLVED
-```
-
-Example:
-
-```text
-Incident #1042
-
-✓ Detected
-✓ Assigned
-✓ Acknowledged
-✓ Responding
-✓ Resolved
-```
-
-The system can record timestamps for each response stage.
-
----
-
-# 14. Command Center Dashboard
-
-The React dashboard provides a centralized view of the railway safety system.
-
-Example:
-
-```text
-+------------------------------------------------+
-|             SURAKSHADRISHTI AI                 |
-+------------------------------------------------+
-
-+----------+----------+----------+---------------+
-| Cameras  | Persons  | Alerts   | Critical      |
-|    12    |   184    |    27    |      3        |
-+----------+----------+----------+---------------+
-
-LIVE CAMERAS
-
-+----------------+    +----------------+
-| CAMERA 01      |    | CAMERA 02      |
-|                |    |                |
-| Person  Person |    | Person Person  |
-|                |    |                |
-| 34 Persons     |    | 18 Persons     |
-+----------------+    +----------------+
-
-RECENT ALERTS
-
-🔴 Intrusion        21:32
-🟠 Loitering        21:29
-🟡 Crowd Alert      21:26
-🔴 Fall Alert       21:21
-```
-
----
-
-# 15. Camera Management
-
-The administrator can manage connected cameras.
-
-Example:
-
-```text
-CAMERA MANAGEMENT
-
-Camera ID    Location       Status
-
-C01          Platform 1     ONLINE
-C02          Platform 2     ONLINE
-C03          Entrance       OFFLINE
-C04          Parking        ONLINE
-```
-
-Camera management can include:
-
-* Add camera
-* Remove camera
-* Enable camera
-* Disable camera
-* Set location
-* Set crowd capacity
-* Configure restricted zones
-
----
-
-# 16. User Roles
-
-The system supports role-based access.
-
-### ADMIN
-
-* Manage users
-* Manage cameras
-* Configure zones
-* View all incidents
-* Manage system settings
-
-### OPERATOR
-
-* Monitor cameras
-* View alerts
-* Handle incidents
-* Create SOS reports
-
-### AUTHORITY
-
-* View assigned incidents
-* Acknowledge incidents
-* Update response status
-* Resolve incidents
-
-### VIEWER
-
-* Read-only dashboard access
-
----
-
-# 17. Privacy and Security
-
-Because the project processes surveillance video, privacy and security are important design considerations.
-
-Planned safeguards include:
-
-* Role-based access control
-* Evidence access logging
-* Data retention policies
-* Optional identity/face masking
-* Secure authentication
-* Controlled evidence access
-* Automatic deletion of expired records
-
-The prototype does not claim to provide complete legal or production-grade privacy compliance.
-
----
-
-# 18. Safety Heatmap
-
-The analytics module can visualize locations with higher numbers of events.
-
-Example:
-
-```text
-             STATION MAP
-
-        PLATFORM 1 🔴
-              |
-              |
-ENTRANCE 🟡 --+-- PLATFORM 2 🔴
-              |
-              |
-          FOOD AREA 🟢
-
-🔴 High Activity
-🟡 Medium Activity
-🟢 Low Activity
-```
-
-The heatmap can be generated using stored event and camera-location information.
-
----
-
-# 19. Analytics Dashboard
-
-The system provides event statistics.
-
-Example:
-
-```text
-DAILY SAFETY ANALYTICS
-
-Total Events:       184
-Intrusion:           42
-Loitering:           51
-Crowd Alerts:        63
-SOS:                 12
-Other:               16
-```
-
-Analytics can be filtered by:
-
-* Date
-* Camera
-* Location
-* Event type
-* Severity
-* Status
-
----
-
-# 20. Reports and Export
-
-The system supports event and incident reporting.
-
-Available formats:
-
-```text
-JSON
-CSV
-```
-
-Reports can contain:
-
-```text
-Event ID
-Timestamp
-Camera
-Location
-Event Type
-Severity
-Status
-Response Time
-Evidence
-```
-
-Example:
-
-```text
-Daily Report
-
-Date: 03-10-2026
-
-Total Events: 184
-Resolved: 167
-Pending: 8
-Critical: 3
-```
-
----
-
-# 21. Database
-
-The system uses SQLite for local prototype storage.
-
-The database structure can include:
-
-```text
-users
-cameras
-zones
-events
-evidence
-alerts
-sos_reports
-authority_assignments
-event_history
-system_logs
-```
-
-The architecture can later be migrated to PostgreSQL or another production database.
-
----
-
-# 22. Technology Stack
-
-| Layer                   | Technology               |
-| ----------------------- | ------------------------ |
-| Frontend                | React + Vite             |
-| Backend                 | FastAPI                  |
-| AI/ML                   | Python                   |
-| Computer Vision         | OpenCV                   |
-| Object Detection        | YOLOv8                   |
-| Tracking                | Tracking module          |
-| Database                | SQLite                   |
-| Real-Time Communication | WebSocket                |
-| Reports                 | JSON / CSV               |
-| Version Control         | Git + GitHub             |
-| Deployment              | Localhost / Docker-ready |
-
----
-
-# 23. System Architecture
-
-```text
-                  CCTV / WEBCAM
+                 CCTV / WEBCAM
                        |
-                       ↓
-               OPENCV FRAME CAPTURE
+                       v
+                VIDEO CAPTURE
                        |
-                       ↓
-                YOLOv8 DETECTION
+                       v
+                OPENCV PROCESSING
                        |
-                       ↓
-                PERSON TRACKING
+                       v
+                 YOLOv8 ENGINE
                        |
-        +--------------+--------------+
-        |              |              |
-        ↓              ↓              ↓
-   CROWD ENGINE   ZONE ENGINE    BEHAVIOR ENGINE
-        |              |              |
-        ↓              ↓              ↓
-     Density       Intrusion      Loitering
-                    Detection     Fall/Suspicious
-        +--------------+--------------+
+                       v
+                PERSON DETECTION
                        |
-                       ↓
+                       v
+                TRACKING MODULE
+                       |
+          +------------+------------+
+          |            |            |
+          v            v            v
+      CROWD        ZONE         PRESENCE
+     ANALYSIS    MONITORING     MONITORING
+          |            |            |
+          +------------+------------+
+                       |
+                       v
                   EVENT ENGINE
                        |
-                       ↓
-                  FASTAPI BACKEND
+                       v
+                 FASTAPI BACKEND
                        |
-             +---------+---------+
-             |                   |
-             ↓                   ↓
-          DATABASE           WEBSOCKET
-             |                   |
-             +---------+---------+
+              +--------+--------+
+              |                 |
+              v                 v
+          SQLITE DB          WEBSOCKET
+              |                 |
+              +--------+--------+
                        |
-                       ↓
-               REACT DASHBOARD
+                       v
+                REACT DASHBOARD
                        |
-       +---------------+---------------+
-       |               |               |
-       ↓               ↓               ↓
-     ALERTS           SOS          AUTHORITY
-                                     RESPONSE
+           +-----------+-----------+
+           |           |           |
+           v           v           v
+         ALERTS        SOS      ANALYTICS
+           |           |
+           +-----------+
                        |
-                       ↓
-                  REPORTS / ANALYTICS
+                       v
+              AUTHORITY WORKFLOW
+                       |
+                       v
+                INCIDENT REPORTS
 ```
+
+### Architecture Explanation
+
+**1. Video Input Layer**
+
+Receives supported webcam or camera/video input.
+
+**2. Computer Vision Layer**
+
+Uses OpenCV for frame processing and YOLOv8 for person detection.
+
+**3. Tracking and Event Layer**
+
+Processes detection information and evaluates configured monitoring conditions.
+
+**4. Backend Layer**
+
+FastAPI handles application requests and backend operations.
+
+**5. Database Layer**
+
+SQLite stores supported application and event information.
+
+**6. Real-Time Communication Layer**
+
+WebSocket supports real-time communication where integrated.
+
+**7. Presentation Layer**
+
+React provides the centralized monitoring dashboard.
 
 ---
 
-# 24. Project Workflow
+# 🔄 6. System Workflow
 
-```text
-1. User logs into the dashboard.
+The general application workflow is:
 
-2. Camera feed is started.
-
-3. OpenCV captures video frames.
-
-4. YOLOv8 processes the frames.
-
-5. Persons/objects are detected.
-
-6. Tracking assigns temporary IDs.
-
-7. Crowd and zone engines analyze the scene.
-
-8. Event engine generates alerts.
-
-9. FastAPI receives and stores the event.
-
-10. WebSocket sends the alert to the dashboard.
-
-11. Operator reviews the alert.
-
-12. Evidence is displayed.
-
-13. Authority can be assigned.
-
-14. Response status is updated.
-
-15. Incident is resolved.
-
-16. Event remains available for analytics and reports.
-```
+1. The application starts.
+2. The backend service initializes.
+3. The frontend dashboard loads.
+4. The AI processing pipeline starts.
+5. A supported camera or video source is connected.
+6. OpenCV captures video frames.
+7. YOLOv8 processes the frames.
+8. Person detections are generated.
+9. Tracking and configured event-processing modules analyze the results.
+10. Generated events are sent to the backend.
+11. Event information is stored in the database.
+12. The dashboard displays available monitoring information.
+13. Operators review alerts and incidents.
+14. SOS and authority workflows support incident tracking.
+15. Available records can be exported for reporting.
 
 ---
 
-# 25. API Structure
+# 🧰 7. Technology Stack
 
-Example FastAPI endpoints:
-
-```text
-POST   /auth/login
-
-GET    /cameras
-POST   /cameras
-PUT    /cameras/{id}
-DELETE /cameras/{id}
-
-GET    /events
-GET    /events/{id}
-POST   /events
-
-GET    /alerts
-PUT    /alerts/{id}/acknowledge
-
-POST   /sos
-GET    /sos
-
-GET    /dispatch
-POST   /dispatch
-PUT    /dispatch/{id}
-
-GET    /analytics
-
-GET    /reports/daily
-GET    /reports/monthly
-
-WebSocket:
- /ws/alerts
- /ws/camera
-```
+| Technology | Purpose                             |
+| ---------- | ----------------------------------- |
+| Python     | Core application and AI development |
+| React.js   | Frontend interface                  |
+| Vite       | Frontend development environment    |
+| FastAPI    | Backend API framework               |
+| YOLOv8     | Person detection                    |
+| OpenCV     | Video and image processing          |
+| SQLite     | Database                            |
+| WebSocket  | Real-time communication             |
+| REST API   | Application communication           |
+| JSON       | Structured data exchange            |
+| CSV        | Report export                       |
+| Git        | Version control                     |
+| GitHub     | Source code hosting                 |
 
 ---
 
-# 26. Project Folder Structure
+# 📂 8. Project Structure
+
+The repository is organized into separate modules for AI processing, backend development, frontend development, event handling and supporting utilities.
 
 ```text
 SurakshaDrishti-AI/
 │
+├── ai_engine/
+│
+├── alert_system/
+│
 ├── backend/
-│   ├── main.py
-│   ├── database.py
-│   ├── models/
-│   ├── schemas/
-│   ├── routes/
-│   ├── services/
-│   └── websocket/
 │
-├── ai/
-│   ├── detection/
-│   ├── tracking/
-│   ├── crowd/
-│   ├── intrusion/
-│   ├── loitering/
-│   ├── fall/
-│   ├── behavior/
-│   └── models/
+├── configs/
 │
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── dashboard/
-│   └── package.json
+├── data/
 │
 ├── database/
 │
-├── evidence/
+├── docs/
+│
+├── event_engine/
+│
+├── frontend/
+│
+├── models/
+│
+├── pipelines/
+│
+├── scripts/
 │
 ├── tests/
 │
-├── docs/
+├── tracking/
 │
-├── .env.example
-├── requirements.txt
-├── Dockerfile
+├── utils/
+│
+├── .gitignore
+│
+├── DEMO_SCRIPT.md
+├── FEATURES.md
+├── FINAL_REVIEW_NOTE.html
+├── README.md
+├── START_FULL_SYSTEM.txt
+├── TROUBLESHOOTING.md
+│
 ├── docker-compose.yml
-└── README.md
+├── requirements.txt
+│
+├── start_backend.ps1
+├── start_frontend.ps1
+├── start_pipeline.ps1
+│
+└── yolov8n.pt
+```
+
+### Directory Description
+
+| Directory       | Description                       |
+| --------------- | --------------------------------- |
+| `ai_engine/`    | AI and computer vision components |
+| `alert_system/` | Alert processing and management   |
+| `backend/`      | FastAPI backend application       |
+| `configs/`      | Application configurations        |
+| `data/`         | Application data                  |
+| `database/`     | Database-related components       |
+| `docs/`         | Project documentation             |
+| `event_engine/` | Event processing logic            |
+| `frontend/`     | React-based dashboard             |
+| `models/`       | AI model-related assets           |
+| `pipelines/`    | Video and AI processing pipelines |
+| `scripts/`      | Utility and automation scripts    |
+| `tests/`        | Testing components                |
+| `tracking/`     | Person tracking components        |
+| `utils/`        | Shared utility functions          |
+
+---
+
+# ⚙️ 9. Installation Guide
+
+Follow the instructions below to configure the project locally.
+
+## System Requirements
+
+Recommended development environment:
+
+| Requirement      | Software                                  |
+| ---------------- | ----------------------------------------- |
+| Operating System | Windows 10/11 or compatible Linux         |
+| Python           | 3.10+                                     |
+| Node.js          | Compatible with the frontend dependencies |
+| npm              | Included with Node.js                     |
+| Code Editor      | Visual Studio Code                        |
+| Version Control  | Git                                       |
+| Camera           | Webcam or compatible video source         |
+
+## Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/aashumishra0907-beep/SurakshaDrishti-AI.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd SurakshaDrishti-AI
+```
+
+## Step 2: Create a Python Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it using PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+## Step 3: Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Step 4: Install Frontend Dependencies
+
+The frontend startup script points to the dashboard directory.
+
+```powershell
+cd frontend/dashboard
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Return to the project root when needed:
+
+```powershell
+cd ../..
 ```
 
 ---
 
-# 27. Run Commands
+# ▶️ 10. Running the Application
 
-Run the following PowerShell commands from the project root:
+The repository contains three PowerShell startup scripts.
+
+* `start_backend.ps1`
+* `start_frontend.ps1`
+* `start_pipeline.ps1`
+
+**Important configuration note:** The current startup scripts contain machine-specific paths. Update those paths to your local repository location before running them on another computer.
+
+### Terminal 1: Backend
+
+From the project root, the backend launcher uses the following application entry point:
+
+```powershell
+python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
+```
+
+Alternatively, after correcting the local path in the script:
 
 ```powershell
 .\start_backend.ps1
 ```
 
-```powershell
-.\start.frontend.ps1
-```
+### Terminal 2: Frontend
 
 ```powershell
-.\start.pipeline.ps1
+cd frontend/dashboard
+npm run dev
 ```
 
-Recommended order:
+Alternatively, use the frontend launcher after correcting its local directory:
+
+```powershell
+.\start_frontend.ps1
+```
+
+### Terminal 3: AI Pipeline
+
+```powershell
+.\start_pipeline.ps1
+```
+
+Check the pipeline script configuration if it uses an absolute local path.
+
+### Access the Application
+
+Frontend:
 
 ```text
-1. Start Backend
-2. Start Frontend
-3. Start AI Pipeline
-4. Open Dashboard
-5. Start Camera
-6. Demonstrate Person Detection
-7. Demonstrate Crowd Monitoring
-8. Demonstrate Intrusion/Loitering Alert
-9. Demonstrate SOS
-10. Demonstrate Authority Workflow
-11. Show Evidence
-12. Export Report
+http://localhost:5173/
 ```
 
----
-
-# 28. Complete Demo Scenario
-
-A complete demonstration can follow this scenario:
+Backend:
 
 ```text
-Camera 02 is monitoring Platform 2.
-
-        ↓
-
-AI detects multiple people.
-
-        ↓
-
-Crowd engine calculates the current density.
-
-        ↓
-
-A person enters a configured restricted zone.
-
-        ↓
-
-Tracking identifies the person's movement.
-
-        ↓
-
-Intrusion event is generated.
-
-        ↓
-
-Evidence is captured.
-
-        ↓
-
-WebSocket sends the alert to the dashboard.
-
-        ↓
-
-Operator receives HIGH priority alert.
-
-        ↓
-
-Operator acknowledges the incident.
-
-        ↓
-
-Authority is assigned.
-
-        ↓
-
-Authority changes status to RESPONDING.
-
-        ↓
-
-Incident is resolved.
-
-        ↓
-
-Event is stored in the database.
-
-        ↓
-
-Analytics are automatically updated.
-
-        ↓
-
-Incident appears in the exported report.
+http://127.0.0.1:8000/
 ```
 
----
+API documentation:
 
-# 29. Current MVP Status
+```text
+http://127.0.0.1:8000/docs
+```
 
-SurakshaDrishti AI is developed as a working software prototype.
+Backend health endpoint:
 
-### Core Components
+```text
+http://127.0.0.1:8000/health
+```
 
-* Login/Auth
-* Live camera feed
-* Person detection
-* Alert system
-* React command dashboard
-* SOS reporting
-* Authority workflow
-* SQLite storage
-* JSON/CSV reporting
-* WebSocket communication
-
-### Advanced Prototype Components
-
-* Person tracking
-* Crowd analysis
-* Restricted-zone monitoring
-* Loitering detection
-* Safety heatmap
-* Evidence management
-* Event analytics
-
-### Further Development
-
-The following capabilities require additional datasets, model training, testing and validation before production deployment:
-
-* Advanced weapon detection
-* Robust fight detection
-* Advanced fall detection
-* Large-scale multi-camera deployment
-* Production cloud infrastructure
-* High-accuracy crowd-density estimation
-* Advanced behavioral analysis
+The backend URLs above are based on the current backend launcher configuration.
 
 ---
 
-# 30. Future Scope
+# 🧪 11. Testing and Validation
 
-Future versions can include:
+The repository includes a `tests/` directory.
 
-* Multi-camera railway station integration
-* Edge AI processing
-* GPU-based inference
-* Advanced crowd prediction
-* Improved pose-based activity detection
-* Better tracking across cameras
-* Production-grade databases
-* Docker and cloud deployment
-* Mobile authority application
-* SMS/email/push notifications
-* Advanced analytics
-* Model monitoring
-* Automated system health monitoring
-* Stronger privacy controls
+Run the available Python tests using:
+
+```bash
+python -m pytest
+```
+
+Ensure the test dependencies are installed before running the command.
+
+### Recommended Testing Areas
+
+| Test Area        | Validation                    |
+| ---------------- | ----------------------------- |
+| Backend          | Application startup           |
+| Frontend         | Dashboard loading             |
+| AI Engine        | Person detection              |
+| Video Processing | Frame capture                 |
+| Tracking         | Tracking output               |
+| Event Engine     | Event generation              |
+| Alert System     | Alert handling                |
+| Database         | Data storage and retrieval    |
+| SOS              | Emergency report submission   |
+| Reporting        | CSV and JSON exports          |
+| WebSocket        | Real-time event communication |
+
+Actual performance, accuracy and reliability should be evaluated through repeatable tests.
 
 ---
 
-# 31. Team TriNetra
+# 🔐 12. Security and Privacy
 
-| Member                   | Role                                                            |
+SurakshaDrishti AI processes camera and monitoring information. Responsible handling of this data is essential.
+
+Important considerations:
+
+* Use only authorized camera feeds.
+* Protect access to application data.
+* Restrict access to incident records.
+* Apply appropriate authentication and authorization.
+* Avoid unnecessary personal-data collection.
+* Establish appropriate data-retention policies.
+* Review AI-generated alerts before taking action.
+* Follow applicable privacy and data-protection regulations.
+
+The current academic prototype should undergo further security and privacy validation before operational deployment.
+
+---
+
+# ⚠️ 13. Current Project Scope and Limitations
+
+SurakshaDrishti AI is developed as an academic software prototype.
+
+Its major components include AI detection, monitoring, event processing, a web dashboard, incident reporting and supporting workflows.
+
+However, some advanced capabilities require further testing, model validation and integration.
+
+Important limitations include:
+
+* Detection performance depends on camera quality and environmental conditions.
+* Tracking can be affected by occlusion and crowded scenes.
+* Crowd estimates depend on camera perspective and detection quality.
+* Zone-based alerts depend on correct configuration.
+* Advanced activity recognition requires appropriate validated models.
+* Large-scale multi-camera deployment requires further optimization.
+* Authority workflows are application-level demonstrations and do not guarantee real-world emergency response.
+
+The system is intended to assist human operators rather than independently make security or enforcement decisions.
+
+---
+
+# 🚀 14. Future Development Roadmap
+
+Potential improvements for future versions include:
+
+| Enhancement                 | Objective                              |
+| --------------------------- | -------------------------------------- |
+| Advanced Crowd Analytics    | Improve crowd monitoring               |
+| Multi-Camera Management     | Support larger monitoring environments |
+| Improved Tracking           | Increase tracking reliability          |
+| Advanced Zone Configuration | Improve restricted-area management     |
+| Fall Detection              | Improve fall-event recognition         |
+| Advanced Heatmaps           | Improve spatial event visualization    |
+| Role-Based Access           | Improve access management              |
+| Enhanced Notifications      | Improve alert communication            |
+| Cloud Deployment            | Support scalable infrastructure        |
+| Advanced Analytics          | Improve historical monitoring          |
+| Automated Testing           | Improve software reliability           |
+| Security Enhancements       | Strengthen application protection      |
+
+These items represent future development opportunities and are not claims of completed implementation.
+
+---
+
+# 📸 15. Screenshots and Demonstration
+
+Screenshots of the actual application can be added to the repository under:
+
+```text
+docs/
+└── screenshots/
+    ├── dashboard.png
+    ├── live-monitoring.png
+    ├── alerts.png
+    ├── analytics.png
+    └── sos-management.png
+```
+
+### Main Dashboard
+
+![Main Dashboard](docs/screenshots/dashboard.png)
+
+### Live Camera Monitoring
+
+![Live Monitoring](docs/screenshots/live-monitoring.png)
+
+### Alert Management
+
+![Alert Management](docs/screenshots/alerts.png)
+
+### Analytics Dashboard
+
+![Analytics](docs/screenshots/analytics.png)
+
+### SOS Management
+
+![SOS Management](docs/screenshots/sos-management.png)
+
+*Replace these image paths with actual screenshots committed to the repository.*
+
+---
+
+# 📚 16. Additional Documentation
+
+The repository contains supporting project documents.
+
+| File                     | Description                        |
+| ------------------------ | ---------------------------------- |
+| `FEATURES.md`            | Detailed feature information       |
+| `DEMO_SCRIPT.md`         | Project demonstration instructions |
+| `TROUBLESHOOTING.md`     | Common setup and runtime issues    |
+| `START_FULL_SYSTEM.txt`  | Full-system startup information    |
+| `FINAL_REVIEW_NOTE.html` | Project review documentation       |
+
+---
+
+# 👥 17. Team TriNetra
+
+**Developed by Team TriNetra**
+
+| Team Member              | Responsibility                                                  |
 | ------------------------ | --------------------------------------------------------------- |
 | Mahesh Rana              | Team Leader, System Architect, Full Stack Developer & Presenter |
 | Laxman Chaudhary         | AI/ML Module Developer                                          |
@@ -1026,85 +814,69 @@ Future versions can include:
 
 ---
 
-# 32. Project Identity
+# 🎓 18. Academic Project Information
 
-| Detail            | Value                                                                      |
-| ----------------- | -------------------------------------------------------------------------- |
-| Project Title     | SurakshaDrishti AI - AI/ML-Based Railway Crowd and Crime Monitoring System |
-| Team              | TriNetra                                                                   |
-| College           | Rathinam Technical Campus                                                  |
-| Department        | Department of Computer Science and Humanities                              |
-| Academic Year     | 2025-2026                                                                  |
-| Event             | YUDHISTRA Project Demo Day 2K26                                            |
-| Problem Reference | SIH1349 - Ministry of Railways                                             |
-| Domain            | Smart Automation                                                           |
-| Type              | Software                                                                   |
-
----
-
-# 33. Project Objective
-
-The primary objective of SurakshaDrishti AI is to demonstrate how existing railway CCTV infrastructure can be enhanced with AI-assisted monitoring.
-
-The system combines:
-
-```text
-Computer Vision
-+
-Object Detection
-+
-Tracking
-+
-Crowd Analysis
-+
-Event Detection
-+
-Real-Time Communication
-+
-Incident Management
-+
-Analytics
-```
-
-into one centralized railway safety monitoring platform.
+| Detail            | Information                                           |
+| ----------------- | ----------------------------------------------------- |
+| Project Name      | SurakshaDrishti AI                                    |
+| Project Title     | AI/ML-Based Railway Crowd and Crime Monitoring System |
+| Team Name         | TriNetra                                              |
+| Institution       | Rathinam Technical Campus                             |
+| Department        | Department of Computer Science and Humanities         |
+| Academic Year     | 2025–2026                                             |
+| Event             | YUDHISTRA Project Demo Day 2K26                       |
+| Problem Reference | SIH1349 – Ministry of Railways                        |
+| Domain            | Smart Automation                                      |
+| Project Type      | AI/ML-Based Software Prototype                        |
 
 ---
 
-# 34. Final Project Vision
+# 🤝 19. Contributions
 
-```text
-                 SURAKSHADRISHTI AI
+Suggestions, improvements and contributions are welcome.
 
-                    Railway CCTV
-                         ↓
-                  AI Vision Layer
-                         ↓
-                Intelligent Analysis
-                         ↓
-                Real-Time Detection
-                         ↓
-                  Alert Generation
-                         ↓
-                Command Dashboard
-                         ↓
-                Human Verification
-                         ↓
-                Authority Response
-                         ↓
-                  Incident Resolution
-                         ↓
-                Analytics & Reports
-```
+When reporting an issue, please include:
 
-SurakshaDrishti AI aims to demonstrate a practical AI-assisted approach to railway safety monitoring by converting conventional video surveillance into a structured, real-time safety intelligence workflow.
+1. A clear description of the problem.
+2. Steps to reproduce the issue.
+3. Expected behavior.
+4. Actual behavior.
+5. Relevant error messages or screenshots.
 
 ---
 
-## Team TriNetra
+# 📄 20. License
 
-**SurakshaDrishti AI**
+No license is currently specified in this README.
 
-*AI/ML-Based Railway Crowd and Crime Monitoring System*
+Please refer to the repository's `LICENSE` file, if present, before reusing or distributing the project.
 
-**Rathinam Technical Campus**
-**Academic Year 2025-2026**
+---
+
+# ⚖️ 21. Disclaimer
+
+SurakshaDrishti AI is an academic project and research-oriented software prototype.
+
+It is not a certified railway security system or a replacement for trained railway personnel.
+
+AI-generated results may contain errors and must be verified by authorized human operators.
+
+Any real-world deployment requires appropriate authorization, operational testing, security assessment and privacy compliance.
+
+---
+
+<div align="center">
+
+# 🛡️ SURAKSHADRISHTI AI
+
+### Smarter Monitoring. Faster Awareness. Safer Railways.
+
+**Developed with ❤️ by Team TriNetra**
+
+**Rathinam Technical Campus | 2025–2026**
+
+<br>
+
+⭐ If you find this project interesting, consider starring the repository!
+
+</div>
